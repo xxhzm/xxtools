@@ -1,13 +1,24 @@
 {
+  "subtitle": "小小工具箱",
   "tools": [
     {
       "id": 1,
       "title": "在线Ping",
       "description": "检测网站或IP的连通性和响应时间，支持服务器位置查看",
       "tag": "网络工具",
+
       "icon": "Connection",
       "keywords": ["ping", "网络检测", "IP", "延迟", "响应时间", "服务器位置"],
       "link": "/tools/network/ping"
+    },
+    {
+      "id": 2,
+      "title": "二维码生成",
+      "description": "快速生成二维码，支持文本、链接等内容",
+      "tag": "图像工具",
+      "icon": "Picture",
+      "keywords": ["二维码", "QR码", "扫码", "链接转码"],
+      "link": "/tools/qrcode"
     }
   ]
 }

@@ -8,54 +8,50 @@
     </div>
 
     <div class="tool-header">
-      <el-icon class="header-icon"><Connection /></el-icon>
+      <el-icon class="header-icon"><QrCode /></el-icon>
       <div class="header-text">
-        <h1>在线Ping检测</h1>
-        <p class="subtitle">
-          检测网站或IP的连通性和响应时间，支持服务器位置查看
-        </p>
+        <h1>在线二维码生成</h1>
+        <p class="subtitle">快速生成二维码，支持文本、链接等内容</p>
       </div>
     </div>
 
     <div class="tool-content">
       <div class="input-section">
         <el-input
-          v-model="url"
-          placeholder="请输入网址或IP地址，如: www.xxhzm.cn"
-          :prefix-icon="Monitor"
-          clearable
-          @keyup.enter="startPing"
+          v-model="text"
+          type="textarea"
+          :rows="4"
+          placeholder="请输入需要生成二维码的内容，如文本、网址等"
+          @input="handleInput"
         />
         <el-button
           type="primary"
           class="generate-btn"
-          @click="startPing"
+          @click="generateQRCode"
           :loading="loading"
         >
-          开始检测
+          生成二维码
         </el-button>
       </div>
 
-      <div v-if="result" class="result-section">
-        <div class="result-card">
-          <div class="result-item">
-            <span class="label">检测地址：</span>
-            <span class="value">{{ result.url }}</span>
-          </div>
-          <div class="result-item">
-            <span class="label">IP地址：</span>
-            <span class="value">{{ result.ip }}</span>
-          </div>
-          <div class="result-item">
-            <span class="label">服务器位置：</span>
-            <span class="value">{{ result.server }}</span>
-          </div>
-          <div class="result-item">
-            <span class="label">响应时间：</span>
-            <span class="value" :class="getTimeType(result.time)">
-              {{ result.time }}
-            </span>
-          </div>
+      <div v-if="qrcodeUrl" class="result-section">
+        <div class="qrcode-wrapper">
+          <img
+            :src="qrcodeUrl"
+            alt="生成的二维码"
+            class="qrcode-image"
+            @load="handleImageLoad"
+            crossorigin="anonymous"
+          />
+          <el-button
+            type="primary"
+            @click="downloadQRCode"
+            class="download-btn"
+            :disabled="!imageLoaded"
+          >
+            <el-icon><Download /></el-icon>
+            下载二维码
+          </el-button>
         </div>
       </div>
     </div>
@@ -63,14 +59,14 @@
     <div class="usage-guide">
       <h2>使用说明</h2>
       <ol>
-        <li>在输入框中输入需要检测的网址或IP地址</li>
-        <li>点击"开始检测"按钮或按回车键</li>
-        <li>等待检测完成，查看详细结果</li>
-        <li>支持重复检测，实时监控网络状态</li>
+        <li>在输入框中输入需要生成二维码的内容（文本、网址等）</li>
+        <li>点击"生成二维码"按钮</li>
+        <li>等待二维码生成完成</li>
+        <li>点击"下载二维码"保存图片</li>
       </ol>
       <div class="note">
         <el-icon><InfoFilled /></el-icon>
-        <span>注意：检测结果仅供参考，实际访问速度可能因网络环境而异</span>
+        <span>注意：生成的二维码图片会在一段时间后自动清理，请及时保存</span>
       </div>
     </div>
   </div>
@@ -81,24 +77,26 @@ import { ref } from "vue";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import {
-  Monitor,
-  Connection,
+  Picture as QrCode,
+  Download,
   InfoFilled,
   ArrowLeft,
 } from "@element-plus/icons-vue";
 import toolsData from "~/data/tools.json";
 
 const router = useRouter();
-const url = ref("");
-const result = ref<any>(null);
+const text = ref("");
+const qrcodeUrl = ref("");
 const loading = ref(false);
+const imageLoaded = ref(false);
 
 // 从data.json导入工具信息
-const toolInfo = toolsData.tools.find((tool) => tool.id === 1);
+const toolInfo = toolsData.tools.find((tool) => tool.id === 2);
 
 // 更新页面标题和描述
-const title = toolInfo?.title || "在线Ping";
-const description = toolInfo?.description || "检测网站或IP的连通性和响应时间";
+const title = toolInfo?.title || "二维码生成";
+const description =
+  toolInfo?.description || "快速生成二维码，支持文本、链接等内容";
 
 useHead({
   title: `${title} - ${toolsData.subtitle}`,
@@ -119,23 +117,34 @@ useHead({
   ],
 });
 
-const startPing = async () => {
-  if (!url.value.trim()) {
-    ElMessage.warning("请输入需要检测的网址或IP");
+const handleInput = () => {
+  qrcodeUrl.value = "";
+  imageLoaded.value = false;
+};
+
+const handleImageLoad = () => {
+  imageLoaded.value = true;
+};
+
+const generateQRCode = async () => {
+  if (!text.value.trim()) {
+    ElMessage.warning("请输入需要生成二维码的内容");
     return;
   }
 
   loading.value = true;
+  imageLoaded.value = false;
   try {
+    const encodedText = encodeURIComponent(text.value);
     const response = await fetch(
-      `https://v2.xxapi.cn/api/ping?url=${encodeURIComponent(url.value)}`
+      `https://v2.xxapi.cn/api/qrcode?text=${encodedText}&return=json`
     );
     const data = await response.json();
 
     if (data.code === 200) {
-      result.value = data.data;
+      qrcodeUrl.value = data.data;
     } else {
-      ElMessage.error("检测失败，请稍后重试");
+      ElMessage.error("二维码生成失败，请稍后重试");
     }
   } catch (error) {
     ElMessage.error("网络错误，请稍后重试");
@@ -144,10 +153,26 @@ const startPing = async () => {
   }
 };
 
-const getTimeType = (time: number) => {
-  if (time < 100) return "success";
-  if (time < 200) return "warning";
-  return "danger";
+const downloadQRCode = async () => {
+  if (!imageLoaded.value) {
+    ElMessage.warning("请等待图片加载完成");
+    return;
+  }
+
+  try {
+    const response = await fetch(qrcodeUrl.value);
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "qrcode.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    ElMessage.error("下载失败，请重试");
+  }
 };
 </script>
 
@@ -219,48 +244,31 @@ const getTimeType = (time: number) => {
 }
 
 .result-section {
+  display: flex;
+  justify-content: center;
   padding-top: 24px;
   border-top: 1px solid var(--el-border-color-light);
 }
 
-.result-card {
-  background: var(--el-bg-color-page);
-  border-radius: 8px;
-  padding: 20px;
-  border: 1px solid var(--el-border-color);
-}
-
-.result-item {
+.qrcode-wrapper {
   display: flex;
-  margin-bottom: 16px;
-  line-height: 1.6;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
 }
 
-.result-item:last-child {
-  margin-bottom: 0;
+.qrcode-image {
+  max-width: 200px;
+  border: 1px solid var(--el-border-color);
+  border-radius: 8px;
+  padding: 8px;
+  background: white;
 }
 
-.result-item .label {
-  width: 100px;
-  color: var(--el-text-color-secondary);
-  flex-shrink: 0;
-}
-
-.result-item .value {
-  color: var(--el-text-color-primary);
-  word-break: break-all;
-}
-
-.result-item .value.success {
-  color: var(--el-color-success);
-}
-
-.result-item .value.warning {
-  color: var(--el-color-warning);
-}
-
-.result-item .value.danger {
-  color: var(--el-color-danger);
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .usage-guide {
