@@ -81,6 +81,21 @@
         "手机信息"
       ],
       "link": "/tools/query/phone"
+    },
+    {
+      "id": 7,
+      "title": "端口扫描",
+      "description": "检测服务器常用端口的开放状态",
+      "tag": "网络工具",
+      "icon": "Monitor",
+      "keywords": [
+        "端口扫描",
+        "端口检测",
+        "服务器端口",
+        "网络安全",
+        "端口状态"
+      ],
+      "link": "/tools/network/portscan"
     }
   ]
 }
