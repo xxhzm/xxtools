@@ -1,0 +1,13 @@
+{
+  "tools": [
+    {
+      "id": 1,
+      "title": "在线Ping",
+      "description": "检测网站或IP的连通性和响应时间，支持服务器位置查看",
+      "tag": "网络工具",
+      "icon": "Connection",
+      "keywords": ["ping", "网络检测", "IP", "延迟", "响应时间", "服务器位置"],
+      "link": "/tools/network/ping"
+    }
+  ]
+}
