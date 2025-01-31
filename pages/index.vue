@@ -124,6 +124,59 @@
         <el-icon><ArrowRight /></el-icon>
       </a>
     </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="friend-links">
+        <span class="label">友情链接：</span>
+        <div class="links">
+          <a
+            v-for="link in toolsData.footer.friendLinks"
+            :key="link.url"
+            :href="link.url"
+            target="_blank"
+            class="link"
+          >
+            {{ link.name }}
+          </a>
+        </div>
+      </div>
+      <div class="beian">
+        <a href="https://beian.miit.gov.cn/" target="_blank" class="beian-link">
+          {{ toolsData.footer.beian.icp }}
+        </a>
+        <span
+          v-if="
+            toolsData.footer.beian.gongan.text &&
+            toolsData.footer.beian.gongan.code
+          "
+          class="divider"
+          >|</span
+        >
+        <a
+          v-if="
+            toolsData.footer.beian.gongan.text &&
+            toolsData.footer.beian.gongan.code
+          "
+          :href="
+            'http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=' +
+            toolsData.footer.beian.gongan.code
+          "
+          target="_blank"
+          class="beian-link"
+        >
+          <img
+            src="@/assets/images/gongan.png"
+            alt="公安备案图标"
+            class="gongan-icon"
+          />
+          {{ toolsData.footer.beian.gongan.text }}
+        </a>
+      </div>
+      <div class="copyright">
+        {{ toolsData.footer.copyright }}
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -608,6 +661,99 @@ const navigateTo = (link: string) => {
 
   .feature-item {
     font-size: 14px;
+  }
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 40px 0;
+  border-top: 1px solid var(--el-border-color-light);
+  text-align: center;
+}
+
+.friend-links {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.friend-links .label {
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+}
+
+.friend-links .links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.friend-links .link {
+  color: var(--el-text-color-regular);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.friend-links .link:hover {
+  color: var(--el-color-primary);
+}
+
+.beian {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.beian-link {
+  color: var(--el-text-color-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.beian-link:hover {
+  color: var(--el-text-color-regular);
+}
+
+.gongan-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.divider {
+  color: var(--el-text-color-secondary);
+}
+
+.copyright {
+  color: var(--el-text-color-secondary);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+
+  .friend-links {
+    flex-direction: column;
+  }
+
+  .beian {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .divider {
+    display: none;
   }
 }
 </style>

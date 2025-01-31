@@ -1,5 +1,25 @@
 {
   "subtitle": "小小工具箱",
+  "footer": {
+    "beian": {
+      "icp": "鲁ICP备2024127053号-1",
+      "gongan": {
+        "text": "",
+        "code": ""
+      }
+    },
+    "friendLinks": [
+      {
+        "name": "小小工具箱",
+        "url": "https://xxtools.cn"
+      },
+      {
+        "name": "小小API",
+        "url": "https://xxapi.cn"
+      }
+    ],
+    "copyright": "© 2024 小小工具箱 All Rights Reserved."
+  },
   "tools": [
     {
       "id": 1,
