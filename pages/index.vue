@@ -145,7 +145,7 @@ import {
   Lock,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
-import toolsData from "~/data/tools.json";
+import toolsData from "~/data/data.json";
 
 const router = useRouter();
 const searchQuery = ref("");

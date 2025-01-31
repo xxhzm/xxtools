@@ -82,7 +82,7 @@ import {
   InfoFilled,
   ArrowLeft,
 } from "@element-plus/icons-vue";
-import toolsData from "~/data/tools.json";
+import toolsData from "~/data/data.json";
 
 const router = useRouter();
 const text = ref("");
