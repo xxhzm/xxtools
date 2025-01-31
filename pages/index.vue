@@ -143,12 +143,35 @@ import {
   FolderOpened,
   Check,
   Lock,
+  Cellphone,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
+import { useHead } from "unhead";
 
 const router = useRouter();
 const searchQuery = ref("");
+
+useHead({
+  title: "小小工具箱 - 免费在线工具集合",
+  meta: [
+    {
+      name: "description",
+      content:
+        "小小工具箱是一个免费的在线工具箱，提供网络检测、图像处理等实用工具。简单易用，无需下载安装，让您的在线工作更轻松。",
+    },
+    {
+      name: "keywords",
+      content:
+        "小小工具箱,在线工具箱,免费工具箱,在线工具,免费工具,网络工具,图像工具,在线检测,免费在线工具",
+    },
+    {
+      name: "viewport",
+      content:
+        "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+    },
+  ],
+});
 
 // 定义工具接口
 interface Tool {
@@ -169,6 +192,8 @@ const iconMap = {
   Monitor,
   Document,
   Clock,
+  Search,
+  Cellphone,
 } as const;
 
 // 搜索功能

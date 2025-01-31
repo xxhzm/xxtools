@@ -19,6 +19,48 @@
       "icon": "Picture",
       "keywords": ["二维码", "QR码", "扫码", "链接转码"],
       "link": "/tools/qrcode"
+    },
+    {
+      "id": 3,
+      "title": "TCP端口检测",
+      "description": "检测服务器端口连通性和响应时间",
+      "tag": "网络工具",
+      "icon": "Connection",
+      "keywords": ["tcp", "端口检测", "网络检测", "服务器", "响应时间"],
+      "link": "/tools/network/tcping"
+    },
+    {
+      "id": 4,
+      "title": "Whois查询",
+      "description": "查询域名注册信息、到期时间、DNS等详细信息",
+      "tag": "网络工具",
+      "icon": "Search",
+      "keywords": ["whois", "域名查询", "域名信息", "DNS查询", "域名注册信息"],
+      "link": "/tools/network/whois"
+    },
+    {
+      "id": 5,
+      "title": "蓝奏云解析",
+      "description": "解析蓝奏云分享链接，获取直接下载地址",
+      "tag": "网络工具",
+      "icon": "Link",
+      "keywords": ["蓝奏云", "直链解析", "下载地址", "网盘解析"],
+      "link": "/tools/network/lanzou"
+    },
+    {
+      "id": 6,
+      "title": "手机归属地",
+      "description": "查询手机号码归属地、运营商等信息",
+      "tag": "查询工具",
+      "icon": "Cellphone",
+      "keywords": [
+        "手机号查询",
+        "归属地查询",
+        "号码归属地",
+        "运营商查询",
+        "手机信息"
+      ],
+      "link": "/tools/query/phone"
     }
   ]
 }
