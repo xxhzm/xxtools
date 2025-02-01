@@ -283,6 +283,38 @@
         "日期工具"
       ],
       "link": "/tools/utils/date"
+    },
+    {
+      "id": 24,
+      "title": "CSS工具",
+      "description": "在线CSS代码处理工具，支持美化、净化、整理、优化和压缩",
+      "tag": "开发工具",
+      "icon": "Edit",
+      "keywords": [
+        "CSS美化",
+        "CSS压缩",
+        "CSS格式化",
+        "CSS优化",
+        "CSS整理",
+        "代码美化"
+      ],
+      "link": "/tools/dev/css"
+    },
+    {
+      "id": 25,
+      "title": "JSON转换",
+      "description": "在线JSON转换工具，支持转换为YAML、Java类、PHP类、Go结构体等",
+      "tag": "开发工具",
+      "icon": "Document",
+      "keywords": [
+        "JSON转换",
+        "YAML",
+        "Java类生成",
+        "PHP类生成",
+        "Go结构体",
+        "代码生成"
+      ],
+      "link": "/tools/dev/json"
     }
   ]
 }
