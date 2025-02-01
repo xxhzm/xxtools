@@ -249,7 +249,7 @@
       "id": 21,
       "title": "图片Base64",
       "description": "在线图片转Base64编码工具，支持本地图片转换，完全在浏览器中进行",
-      "tag": "开发工具",
+      "tag": "图片工具",
       "icon": "Picture",
       "keywords": [
         "图片转base64",
@@ -258,16 +258,16 @@
         "图片转换",
         "base64"
       ],
-      "link": "/tools/dev/base64"
+      "link": "/tools/image/base64"
     },
     {
       "id": 22,
       "title": "图片水印",
       "description": "在线图片添加水印工具，支持文字水印和图片水印，完全在本地处理",
-      "tag": "实用工具",
+      "tag": "图片工具",
       "icon": "Picture",
       "keywords": ["图片水印", "水印添加", "图片处理", "文字水印", "图片编辑"],
-      "link": "/tools/utils/watermark"
+      "link": "/tools/image/watermark"
     },
     {
       "id": 23,
@@ -315,6 +315,15 @@
         "代码生成"
       ],
       "link": "/tools/dev/json"
+    },
+    {
+      "id": 27,
+      "title": "图片切割",
+      "description": "在线图片切割工具，可将图片切割成指定行列数的小图片",
+      "tag": "图片工具",
+      "icon": "Crop",
+      "keywords": ["图片切割", "切图", "图片分割", "九宫格切图", "图片处理"],
+      "link": "/tools/image/split"
     }
   ]
 }
