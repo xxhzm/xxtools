@@ -101,12 +101,6 @@
         <span>提示：数值保留4位小数，支持正数和负数</span>
       </div>
     </div>
-
-    <div class="file-hash-section">
-      <h2>文件哈希计算</h2>
-      <el-input v-model="fileHashResult" readonly placeholder="计算中...">
-      </el-input>
-    </div>
   </div>
 </template>
 
@@ -121,9 +115,6 @@ import {
   InfoFilled,
   Odometer,
 } from "@element-plus/icons-vue";
-import { ElMessage } from "element-plus";
-import type { UploadFile, UploadFiles } from "element-plus";
-import CryptoJS from "crypto-js";
 import toolsData from "~/data/data.json";
 
 const router = useRouter();
@@ -298,45 +289,6 @@ const resetValues = () => {
 watch(currentType, () => {
   resetValues();
 });
-
-const handleFileChange = (uploadFile: UploadFile) => {
-  const file = uploadFile.raw;
-  if (!file) return;
-
-  fileInfo.value = file;
-  fileHashResult.value = "";
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    if (!e.target?.result) return;
-
-    const wordArray = CryptoJS.lib.WordArray.create(
-      e.target.result as ArrayBuffer
-    );
-    let result = "";
-
-    switch (algorithm.value) {
-      case "md5":
-        result = CryptoJS.MD5(wordArray).toString();
-        break;
-      case "sha1":
-        result = CryptoJS.SHA1(wordArray).toString();
-        break;
-      case "sha256":
-        result = CryptoJS.SHA256(wordArray).toString();
-        break;
-      case "sha512":
-        result = CryptoJS.SHA512(wordArray).toString();
-        break;
-    }
-
-    fileHashResult.value = uppercase.value
-      ? result.toUpperCase()
-      : result.toLowerCase();
-  };
-
-  reader.readAsArrayBuffer(file);
-};
 </script>
 
 <style scoped>
