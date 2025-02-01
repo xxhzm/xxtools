@@ -200,6 +200,7 @@ import {
   Timer,
   Warning,
   Brush,
+  Key,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -253,6 +254,7 @@ const iconMap = {
   Timer,
   Warning,
   Brush,
+  Key,
 } as const;
 
 // 搜索功能
