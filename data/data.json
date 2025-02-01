@@ -152,6 +152,24 @@
       "icon": "Picture",
       "keywords": ["网站图标", "favicon", "ico", "网站logo", "图标获取"],
       "link": "/tools/utils/ico"
+    },
+    {
+      "id": 13,
+      "title": "UUID生成",
+      "description": "生成随机的UUID/GUID标识符，支持批量生成和自定义格式",
+      "tag": "实用工具",
+      "icon": "Operation",
+      "keywords": ["UUID", "GUID", "唯一标识符", "随机ID", "通用唯一识别码"],
+      "link": "/tools/utils/uuid"
+    },
+    {
+      "id": 14,
+      "title": "IP查询",
+      "description": "查询IP地址的地理位置、运营商等详细信息",
+      "tag": "网络工具",
+      "icon": "Location",
+      "keywords": ["IP查询", "IP地址", "地理位置", "运营商", "IP归属地"],
+      "link": "/tools/network/ip"
     }
   ]
 }

@@ -201,6 +201,8 @@ import {
   Warning,
   Brush,
   Key,
+  Operation,
+  Location,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -255,6 +257,8 @@ const iconMap = {
   Warning,
   Brush,
   Key,
+  Operation,
+  Location,
 } as const;
 
 // 搜索功能
