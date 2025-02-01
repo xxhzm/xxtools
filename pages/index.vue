@@ -203,6 +203,7 @@ import {
   Key,
   Operation,
   Location,
+  Edit,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -259,6 +260,7 @@ const iconMap = {
   Key,
   Operation,
   Location,
+  Edit,
 } as const;
 
 // 搜索功能
