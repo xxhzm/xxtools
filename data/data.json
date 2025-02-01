@@ -324,6 +324,38 @@
       "icon": "Crop",
       "keywords": ["图片切割", "切图", "图片分割", "九宫格切图", "图片处理"],
       "link": "/tools/image/split"
+    },
+    {
+      "id": 28,
+      "title": "URL编码",
+      "description": "在线URL编码解码工具，支持中文和特殊字符的编码解码转换",
+      "tag": "开发工具",
+      "icon": "Link",
+      "keywords": [
+        "URL编码",
+        "URL解码",
+        "encodeURI",
+        "decodeURI",
+        "URL转换",
+        "网址编码"
+      ],
+      "link": "/tools/dev/url"
+    },
+    {
+      "id": 29,
+      "title": "XML转换",
+      "description": "在线XML与JSON数据格式互相转换工具，支持格式化和压缩",
+      "tag": "开发工具",
+      "icon": "Document",
+      "keywords": [
+        "XML转JSON",
+        "JSON转XML",
+        "XML格式化",
+        "数据转换",
+        "XML解析",
+        "JSON解析"
+      ],
+      "link": "/tools/dev/xml"
     }
   ]
 }
