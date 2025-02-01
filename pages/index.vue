@@ -204,6 +204,9 @@ import {
   Operation,
   Location,
   Edit,
+  DataLine,
+  Calendar,
+  Odometer,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -261,6 +264,9 @@ const iconMap = {
   Operation,
   Location,
   Edit,
+  DataLine,
+  Calendar,
+  Odometer,
 } as const;
 
 // 搜索功能

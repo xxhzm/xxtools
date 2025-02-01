@@ -194,6 +194,56 @@
         "timestamp"
       ],
       "link": "/tools/utils/timestamp"
+    },
+    {
+      "id": 17,
+      "title": "进制转换",
+      "description": "在线进制转换工具，支持二进制、八进制、十进制、十六进制互转",
+      "tag": "实用工具",
+      "icon": "DataLine",
+      "keywords": [
+        "进制转换",
+        "二进制",
+        "八进制",
+        "十进制",
+        "十六进制",
+        "hex",
+        "binary"
+      ],
+      "link": "/tools/utils/base"
+    },
+    {
+      "id": 18,
+      "title": "历史上的今天",
+      "description": "查看历史上今天发生的重大事件",
+      "tag": "生活工具",
+      "icon": "Calendar",
+      "keywords": [
+        "历史事件",
+        "历史上的今天",
+        "历史查询",
+        "今日历史",
+        "大事记"
+      ],
+      "link": "/tools/life/history"
+    },
+    {
+      "id": 19,
+      "title": "单位转换",
+      "description": "在线单位换算工具，支持长度、面积、体积、重量、温度等常用单位转换",
+      "tag": "实用工具",
+      "icon": "Odometer",
+      "keywords": ["单位转换", "单位换算", "度量衡", "公制", "英制", "换算器"],
+      "link": "/tools/utils/unit"
+    },
+    {
+      "id": 20,
+      "title": "哈希计算",
+      "description": "在线哈希计算工具，支持MD5、SHA1、SHA256、SHA512等多种算法",
+      "tag": "开发工具",
+      "icon": "Key",
+      "keywords": ["哈希", "散列", "加密", "MD5", "SHA", "hash"],
+      "link": "/tools/dev/hash"
     }
   ]
 }
