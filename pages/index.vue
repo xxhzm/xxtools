@@ -197,6 +197,9 @@ import {
   Check,
   Lock,
   Cellphone,
+  Timer,
+  Warning,
+  Brush,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -247,6 +250,9 @@ const iconMap = {
   Clock,
   Search,
   Cellphone,
+  Timer,
+  Warning,
+  Brush,
 } as const;
 
 // 搜索功能

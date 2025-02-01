@@ -96,6 +96,39 @@
         "端口状态"
       ],
       "link": "/tools/network/portscan"
+    },
+    {
+      "id": 8,
+      "title": "网站测速",
+      "description": "测试网站的访问速度和响应时间",
+      "tag": "网络工具",
+      "icon": "Timer",
+      "keywords": ["网站测速", "速度测试", "响应时间", "网站性能", "访问速度"],
+      "link": "/tools/network/speed"
+    },
+    {
+      "id": 9,
+      "title": "状态码查询",
+      "description": "检测网站的HTTP状态码和可访问性",
+      "tag": "网络工具",
+      "icon": "Warning",
+      "keywords": [
+        "状态码查询",
+        "HTTP状态",
+        "网站状态",
+        "网站检测",
+        "可访问性"
+      ],
+      "link": "/tools/network/status"
+    },
+    {
+      "id": 10,
+      "title": "颜色转换",
+      "description": "16进制颜色代码与RGB颜色值互相转换",
+      "tag": "开发工具",
+      "icon": "Brush",
+      "keywords": ["颜色转换", "16进制颜色", "RGB颜色", "颜色代码", "颜色值"],
+      "link": "/tools/dev/color"
     }
   ]
 }
