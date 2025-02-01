@@ -244,6 +244,21 @@
       "icon": "Key",
       "keywords": ["哈希", "散列", "加密", "MD5", "SHA", "hash"],
       "link": "/tools/dev/hash"
+    },
+    {
+      "id": 21,
+      "title": "图片Base64",
+      "description": "在线图片转Base64编码工具，支持本地图片转换，完全在浏览器中进行",
+      "tag": "开发工具",
+      "icon": "Picture",
+      "keywords": [
+        "图片转base64",
+        "base64编码",
+        "图片编码",
+        "图片转换",
+        "base64"
+      ],
+      "link": "/tools/dev/base64"
     }
   ]
 }
