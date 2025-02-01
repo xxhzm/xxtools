@@ -356,6 +356,70 @@
         "JSON解析"
       ],
       "link": "/tools/dev/xml"
+    },
+    {
+      "id": 30,
+      "title": "今天吃什么",
+      "description": "随机推荐今天吃什么，支持自定义菜品列表",
+      "tag": "生活工具",
+      "icon": "Food",
+      "keywords": [
+        "今天吃什么",
+        "随机菜品",
+        "午饭推荐",
+        "晚饭推荐",
+        "美食推荐",
+        "吃什么"
+      ],
+      "link": "/tools/life/food"
+    },
+    {
+      "id": 31,
+      "title": "每日喝水",
+      "description": "根据体重、活动量和年龄计算每日建议饮水量",
+      "tag": "生活工具",
+      "icon": "Mug",
+      "keywords": [
+        "喝水计算",
+        "饮水量",
+        "每日饮水",
+        "健康饮水",
+        "水分摄入",
+        "喝水提醒"
+      ],
+      "link": "/tools/life/water"
+    },
+    {
+      "id": 32,
+      "title": "孩子身高预测",
+      "description": "根据父母身高预测孩子成年后的身高范围",
+      "tag": "生活工具",
+      "icon": "User",
+      "keywords": [
+        "身高预测",
+        "遗传身高",
+        "孩子身高",
+        "成年身高",
+        "身高计算",
+        "遗传计算"
+      ],
+      "link": "/tools/life/height"
+    },
+    {
+      "id": 33,
+      "title": "BMI计算",
+      "description": "计算身体质量指数(BMI)并评估健康状况",
+      "tag": "生活工具",
+      "icon": "DataLine",
+      "keywords": [
+        "BMI计算",
+        "体重指数",
+        "身体质量指数",
+        "健康指标",
+        "体重评估",
+        "健康计算"
+      ],
+      "link": "/tools/life/bmi"
     }
   ]
 }

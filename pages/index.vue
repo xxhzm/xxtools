@@ -208,6 +208,9 @@ import {
   Calendar,
   Odometer,
   Crop,
+  Food,
+  Mug,
+  User,
 } from "@element-plus/icons-vue";
 import { useRouter } from "vue-router";
 import toolsData from "~/data/data.json";
@@ -269,6 +272,9 @@ const iconMap = {
   Calendar,
   Odometer,
   Crop,
+  Food,
+  Mug,
+  User,
 } as const;
 
 // 搜索功能
