@@ -303,7 +303,7 @@ const calculateElements = () => {
 
 <style scoped>
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -360,10 +360,10 @@ const calculateElements = () => {
 }
 
 .input-section {
+  margin-bottom: 24px;
   background: var(--el-bg-color-page);
   border-radius: 8px;
   padding: 20px;
-  margin-bottom: 24px;
 }
 
 .date-input {
@@ -390,6 +390,7 @@ const calculateElements = () => {
   border-radius: 8px;
   padding: 16px;
   text-align: center;
+  border: 1px solid var(--el-border-color);
 }
 
 .cell-label {
@@ -423,6 +424,7 @@ const calculateElements = () => {
   background: var(--el-bg-color);
   border-radius: 8px;
   padding: 16px;
+  border: 1px solid var(--el-border-color);
 }
 
 .analysis-section h3 {
@@ -506,21 +508,46 @@ const calculateElements = () => {
   margin-bottom: 12px;
 }
 
-.usage-guide ul {
-  margin: 8px 0;
-  padding-left: 20px;
-}
-
 .note {
-  margin-top: 16px;
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--el-color-primary-light-9);
+  border-radius: 6px;
   color: var(--el-text-color-secondary);
   font-size: 14px;
 }
 
 .note .el-icon {
-  color: var(--el-color-warning);
+  color: var(--el-color-primary);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .bazi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .date-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  :deep(.el-date-editor.el-input),
+  :deep(.el-date-editor.el-input__wrapper) {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  :deep(.el-picker-panel) {
+    width: 90vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
 }
 </style>

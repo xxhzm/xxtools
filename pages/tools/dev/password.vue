@@ -17,7 +17,7 @@
 
     <div class="tool-content">
       <div class="input-section">
-        <el-form :model="form" label-width="100px">
+        <el-form :model="form">
           <el-form-item label="密码">
             <div class="password-input">
               <el-input

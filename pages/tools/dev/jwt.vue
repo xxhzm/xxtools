@@ -26,7 +26,7 @@
                   type="textarea"
                   :rows="6"
                   :autosize="{ minRows: 6, maxRows: 10 }"
-                  style="width: 100%; min-width: 500px"
+                  style="width: 100%"
                   placeholder="请输入JWT令牌"
                   @input="parseToken"
                 >

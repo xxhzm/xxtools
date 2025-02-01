@@ -442,7 +442,7 @@
       "title": "SQL格式化",
       "description": "SQL语句格式化和美化工具，支持多种数据库语法",
       "tag": "开发工具",
-      "icon": "DataBase",
+      "icon": "Edit",
       "keywords": [
         "SQL格式化",
         "SQL美化",

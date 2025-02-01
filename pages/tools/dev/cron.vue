@@ -448,13 +448,15 @@
             <h3>最近10次执行时间</h3>
           </div>
           <div class="next-times">
-            <div
-              v-for="(time, index) in nextTimes"
-              :key="index"
-              class="time-item"
-            >
-              {{ formatDateTime(time) }}
-            </div>
+            <ClientOnly>
+              <div
+                v-for="(time, index) in nextTimes"
+                :key="index"
+                class="time-item"
+              >
+                {{ formatDateTime(time) }}
+              </div>
+            </ClientOnly>
           </div>
         </div>
       </div>
@@ -689,7 +691,7 @@ generateExpression();
 
 <style scoped>
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -760,6 +762,20 @@ generateExpression();
 .cron-input {
   display: flex;
   gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.cron-input :deep(.el-input) {
+  width: 100%;
+}
+
+.cron-input :deep(.el-input__wrapper) {
+  width: 100%;
+}
+
+.cron-input :deep(.el-input-group__append) {
+  padding: 0;
 }
 
 .cron-tabs {
@@ -774,7 +790,8 @@ generateExpression();
   margin-top: 16px;
   padding: 16px;
   background: var(--el-bg-color);
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--el-border-color);
 }
 
 .result-section {
@@ -788,7 +805,7 @@ generateExpression();
 }
 
 .result-header h3 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   color: var(--el-text-color-primary);
 }
@@ -802,7 +819,8 @@ generateExpression();
 .time-item {
   padding: 12px;
   background: var(--el-bg-color);
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid var(--el-border-color);
   color: var(--el-text-color-regular);
   font-size: 14px;
 }
@@ -829,11 +847,6 @@ generateExpression();
 
 .usage-guide li {
   margin-bottom: 12px;
-}
-
-.usage-guide ul {
-  margin: 8px 0;
-  padding-left: 20px;
 }
 
 .note {
@@ -867,10 +880,100 @@ generateExpression();
 @media (max-width: 768px) {
   .container {
     padding: 15px;
+    width: 100%;
+    overflow-x: hidden;
   }
 
   .cron-section {
     grid-template-columns: 1fr;
+  }
+
+  .input-section {
+    padding: 15px;
+  }
+
+  .cron-input {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .cron-input :deep(.el-input) {
+    width: 100%;
+  }
+
+  .cron-input :deep(.el-input__wrapper) {
+    width: 100%;
+  }
+
+  .cron-input :deep(.el-input-group__append) {
+    padding: 0;
+  }
+
+  .cron-input :deep(.el-input-group__append .el-button) {
+    padding: 8px;
+  }
+
+  :deep(.el-form) {
+    width: 100%;
+  }
+
+  :deep(.el-form-item) {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+
+  :deep(.el-form-item__content) {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  :deep(.el-tabs__header) {
+    margin: 0 0 16px;
+  }
+
+  :deep(.el-tabs__nav-wrap) {
+    padding: 0;
+  }
+
+  :deep(.el-tabs__nav) {
+    width: 100%;
+    display: flex;
+  }
+
+  :deep(.el-tabs__item) {
+    flex: 1;
+    text-align: center;
+    padding: 0 4px;
+    font-size: 14px;
+    height: 36px;
+    line-height: 36px;
+  }
+
+  :deep(.el-radio-group) {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  :deep(.el-form-item__label) {
+    text-align: left;
+    margin-bottom: 8px;
+    padding: 0;
+  }
+
+  .time-item {
+    word-break: break-all;
+  }
+
+  .usage-guide {
+    padding: 16px;
+  }
+
+  .usage-guide ol {
+    padding-left: 16px;
+  }
+
+  .usage-guide li {
+    margin-bottom: 8px;
   }
 }
 </style>
