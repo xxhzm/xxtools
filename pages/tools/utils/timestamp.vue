@@ -18,18 +18,20 @@
     <div class="tool-content">
       <div class="current-time">
         <div class="time-display">
-          <div class="time-item">
-            <div class="label">当前时间</div>
-            <div class="value">{{ currentDateTime }}</div>
-          </div>
-          <div class="time-item">
-            <div class="label">秒级时间戳</div>
-            <div class="value">{{ currentTimestamp }}</div>
-          </div>
-          <div class="time-item">
-            <div class="label">毫秒级时间戳</div>
-            <div class="value">{{ currentTimestampMs }}</div>
-          </div>
+          <ClientOnly>
+            <div class="time-item">
+              <div class="label">当前时间</div>
+              <div class="value">{{ currentDateTime }}</div>
+            </div>
+            <div class="time-item">
+              <div class="label">秒级时间戳</div>
+              <div class="value">{{ currentTimestamp }}</div>
+            </div>
+            <div class="time-item">
+              <div class="label">毫秒级时间戳</div>
+              <div class="value">{{ currentTimestampMs }}</div>
+            </div>
+          </ClientOnly>
         </div>
         <el-button type="primary" @click="refreshTime">
           <el-icon><Refresh /></el-icon>
@@ -71,15 +73,18 @@
 
       <div class="conversion-section">
         <div class="input-group">
-          <el-date-picker
-            v-model="dateTimeInput"
-            type="datetime"
-            placeholder="选择日期时间"
-            format="YYYY-MM-DD HH:mm:ss"
-            value-format="x"
-            :shortcuts="shortcuts"
-            style="width: 100%"
-          />
+          <el-config-provider :locale="zhCn">
+            <el-date-picker
+              v-model="dateTimeInput"
+              type="datetime"
+              placeholder="选择日期时间"
+              format="YYYY-MM-DD HH:mm:ss"
+              value-format="x"
+              :shortcuts="shortcuts"
+              style="width: 100%"
+            />
+          </el-config-provider>
+
           <div class="result" v-if="dateTimeInput">
             <div class="result-item">
               <span class="label">秒级时间戳：</span>
@@ -134,6 +139,8 @@ import { useRouter } from "vue-router";
 import { Timer, Refresh, InfoFilled, ArrowLeft } from "@element-plus/icons-vue";
 import dayjs from "dayjs";
 import toolsData from "~/data/data.json";
+// @ts-ignore
+import zhCn from "element-plus/dist/locale/zh-cn.mjs";
 
 const router = useRouter();
 
@@ -226,10 +233,12 @@ const copyText = (text: string) => {
   copyInput.value.value = "";
 };
 
-// 自动更新当前时间
-setInterval(() => {
-  now.value = Date.now();
-}, 1000);
+onMounted(() => {
+  // 自动更新当前时间
+  setInterval(() => {
+    now.value = Date.now();
+  }, 1000);
+});
 </script>
 
 <style scoped>

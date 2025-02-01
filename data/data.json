@@ -420,6 +420,119 @@
         "健康计算"
       ],
       "link": "/tools/life/bmi"
+    },
+    {
+      "id": 34,
+      "title": "图片压缩",
+      "description": "在线图片压缩工具，支持多种格式，快速压缩不失真",
+      "tag": "图片工具",
+      "icon": "Picture",
+      "keywords": [
+        "图片压缩",
+        "图像压缩",
+        "压缩图片",
+        "图片优化",
+        "批量压缩",
+        "在线压缩"
+      ],
+      "link": "/tools/image/compress"
+    },
+    {
+      "id": 35,
+      "title": "SQL格式化",
+      "description": "SQL语句格式化和美化工具，支持多种数据库语法",
+      "tag": "开发工具",
+      "icon": "DataBase",
+      "keywords": [
+        "SQL格式化",
+        "SQL美化",
+        "SQL排版",
+        "代码格式化",
+        "SQL工具",
+        "SQL语句"
+      ],
+      "link": "/tools/dev/sql-format"
+    },
+    {
+      "id": 36,
+      "title": "文本统计",
+      "description": "在线文本字数统计工具，支持中英文字符、标点符号、空格等统计",
+      "tag": "实用工具",
+      "icon": "Document",
+      "keywords": [
+        "字数统计",
+        "文本统计",
+        "字符统计",
+        "字数计算",
+        "文本分析",
+        "字数计数"
+      ],
+      "link": "/tools/utils/text-count"
+    },
+    {
+      "id": 37,
+      "title": "房贷计算",
+      "description": "房贷计算器，支持等额本息和等额本金两种还款方式",
+      "tag": "生活工具",
+      "icon": "House",
+      "keywords": [
+        "房贷计算器",
+        "房贷",
+        "月供计算",
+        "等额本息",
+        "等额本金",
+        "贷款计算",
+        "还款计算"
+      ],
+      "link": "/tools/life/mortgage"
+    },
+    {
+      "id": 38,
+      "title": "Cron表达式",
+      "description": "Cron表达式生成器和解析工具，支持标准Cron格式，可视化配置和验证",
+      "tag": "开发工具",
+      "icon": "Clock",
+      "keywords": [
+        "cron",
+        "定时任务",
+        "表达式生成",
+        "cron解析",
+        "定时器",
+        "调度器"
+      ],
+      "link": "/tools/dev/cron"
+    },
+    {
+      "id": 39,
+      "title": "JWT解析",
+      "description": "在线JWT令牌解析工具，支持解码查看Header、Payload和Signature",
+      "tag": "开发工具",
+      "icon": "Key",
+      "keywords": [
+        "JWT",
+        "令牌解析",
+        "token解析",
+        "JSON Web Token",
+        "JWT解码",
+        "token验证"
+      ],
+      "link": "/tools/dev/jwt"
+    },
+    {
+      "id": 40,
+      "title": "生辰八字",
+      "description": "在线生辰八字计算工具，支持阳历阴历转换、八字排盘、五行分析",
+      "tag": "生活工具",
+      "icon": "Calendar",
+      "keywords": [
+        "生辰八字",
+        "八字计算",
+        "阴阳历转换",
+        "五行分析",
+        "命理",
+        "排盘"
+      ],
+      "link": "/tools/life/bazi"
     }
   ]
 }
