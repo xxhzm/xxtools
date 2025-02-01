@@ -259,6 +259,15 @@
         "base64"
       ],
       "link": "/tools/dev/base64"
+    },
+    {
+      "id": 22,
+      "title": "图片水印",
+      "description": "在线图片添加水印工具，支持文字水印和图片水印，完全在本地处理",
+      "tag": "实用工具",
+      "icon": "Picture",
+      "keywords": ["图片水印", "水印添加", "图片处理", "文字水印", "图片编辑"],
+      "link": "/tools/utils/watermark"
     }
   ]
 }
