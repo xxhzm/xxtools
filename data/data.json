@@ -26,7 +26,6 @@
       "title": "在线Ping",
       "description": "检测网站或IP的连通性和响应时间，支持服务器位置查看",
       "tag": "网络工具",
-
       "icon": "Connection",
       "keywords": ["ping", "网络检测", "IP", "延迟", "响应时间", "服务器位置"],
       "link": "/tools/network/ping"
@@ -38,7 +37,7 @@
       "tag": "实用工具",
       "icon": "Picture",
       "keywords": ["二维码", "QR码", "扫码", "链接转码"],
-      "link": "/tools/dev/qrcode"
+      "link": "/tools/utils/qrcode"
     },
     {
       "id": 3,
@@ -80,7 +79,7 @@
         "运营商查询",
         "手机信息"
       ],
-      "link": "/tools/query/phone"
+      "link": "/tools/life/phone"
     },
     {
       "id": 7,
@@ -128,7 +127,7 @@
       "tag": "实用工具",
       "icon": "Brush",
       "keywords": ["颜色转换", "16进制颜色", "RGB颜色", "颜色代码", "颜色值"],
-      "link": "/tools/dev/color"
+      "link": "/tools/utils/color"
     },
     {
       "id": 11,
@@ -143,16 +142,16 @@
         "密码工具",
         "密码生成器"
       ],
-      "link": "/tools/dev/password"
+      "link": "/tools/utils/password"
     },
     {
       "id": 12,
       "title": "网站图标",
       "description": "获取任意网站的favicon图标",
-      "tag": "网络工具",
+      "tag": "实用工具",
       "icon": "Picture",
       "keywords": ["网站图标", "favicon", "ico", "网站logo", "图标获取"],
-      "link": "/tools/network/ico"
+      "link": "/tools/utils/ico"
     }
   ]
 }
