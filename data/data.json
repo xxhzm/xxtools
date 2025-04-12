@@ -270,6 +270,22 @@
       "link": "/tools/image/watermark"
     },
     {
+      "id": "privacy-watermark",
+      "title": "隐私保护水印",
+      "description": "为图片添加半透明文字水印，保护图片版权，防止未经授权传播",
+      "tag": "图片工具",
+      "icon": "Lock",
+      "keywords": [
+        "隐私保护水印",
+        "版权保护",
+        "水印添加",
+        "图片保护",
+        "文字水印",
+        "图片版权"
+      ],
+      "link": "/tools/image/privacy-watermark"
+    },
+    {
       "id": 23,
       "title": "日期计算",
       "description": "在线日期相差计算工具，支持计算两个日期之间的天数、工作日等",
